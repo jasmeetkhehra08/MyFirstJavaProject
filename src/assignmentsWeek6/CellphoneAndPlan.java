@@ -8,7 +8,7 @@ package assignmentsWeek6;
 public class CellphoneAndPlan {
 
 	String selectDevice(String model) {
-		//String phoneTab;
+		String phoneTab;
 		
 		if (model.equals("s22")) {
 			System.out.println(" Your Phone Tab will be : $25/month");  
@@ -28,14 +28,24 @@ public class CellphoneAndPlan {
 			System.out.println("Your Phone Tab will be : $25/ month");  
 		} else {
 			System.out.println("invalid input");
+			
 		}
-
 		return model;
 	}
+		String model(String phoneTab) {
+		if(phoneTab.equals("invalid input")){
+			System.out.println("invalid input- select from available devices");}
+		else {
+			System.out.println("Please select the plan that you want to opt for: Rogers/ Telus/ Bell");
+		}
+		return phoneTab;
+		}
+
+
 	
 	String selectPlan(String carrier)
 	{
-	//	String monthlyPlan;
+	String monthlyPlan;{
 		if(carrier.equals("telus")) {
 			System.out.println("Your Monthly Plan will be : $75/month");  
 		}else if (carrier.equals("bell")) {
@@ -43,7 +53,7 @@ public class CellphoneAndPlan {
 		}else if (carrier.equals("rogers")) {
 			System.out.println("Your Monthly Plan will be : $70/month");}
 			else {
-				System.out.println("invalid intput");
+				System.out.println("invalid input");
 			}
 	
 
@@ -53,5 +63,5 @@ public class CellphoneAndPlan {
 	
 }
 	
-
+}
 

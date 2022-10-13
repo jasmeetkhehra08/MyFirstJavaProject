@@ -4,12 +4,11 @@ S22 Ultra	$55/ month	IPhone 14 pro max	$65/Month
 S22FE	$20/month	IPhone 14 mini	$25/Month */
 package assignmentsWeek6;
 
-public class PriceOfPlans {
+public class PhoneTabPrices {
 		// TODO Auto-generated method stub
 		
-		int total(int model, int carrier) {
-			int total = model+carrier;
-		
+		String phoneTabPrice(String model) {
+			
 		int s22 = 25;
 		int s22Plus = 35;
 		int s22Ultra = 55;
@@ -19,39 +18,32 @@ public class PriceOfPlans {
 		int iphone14Promax = 65;
 		int iphoneMini = 25;
 		
-		if (model==s22) {
+	if (model.equals("s22")) {
 			System.out.println(s22);
 			}
-			else if(model==s22Plus) {
+			else if(model.equals("s22Plus")) {
 				System.out.println(s22Plus);}
-				else if (model==s22Ultra) {
+				else if (model.equals("s22Ultra")) {
 					System.out.println(s22Ultra);
-		}else if (model==s22FE) {
+		}else if (model.equals("s22FE")) {
 			System.out.println(s22FE);}
-			else {
+		else if (model.equals("iphone14")) {
+			System.out.println(iphone14);}
+		else if (model.equals("iphone14Pro")) {
+			System.out.println(iphone14Pro);}
+		else if (model.equals("iphone14Promax")) {
+			System.out.println(iphone14Promax);}
+		else if (model.equals("iphone14Mini")) {
+			System.out.println("iphone14Mini");}
+		else {
 				System.out.println("invalid input");
 			}
+	return model;
+		}
 		
 		
-		int telus = 75;
-		int bell = 80;
-		int rogers = 70;
 		
-		if (carrier==telus) {
-			System.out.println(telus);}
-			else if (carrier==bell) {
-				System.out.println(bell);}
-			else if (carrier==rogers) {
-				System.out.println(rogers);}
-				else {
-					System.out.println("wrong input");
-				}
-				
-		
-		
-		return total;
-		
+		}
 		
 
-}
-}
+
