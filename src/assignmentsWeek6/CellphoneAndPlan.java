@@ -43,7 +43,7 @@ public class CellphoneAndPlan {
 		}else if (carrier.equals("rogers")) {
 			System.out.println("Your Monthly Plan will be : $70/month");}
 			else {
-				System.out.println("invalid output");
+				System.out.println("invalid intput");
 			}
 	
 

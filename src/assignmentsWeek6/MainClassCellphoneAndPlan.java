@@ -33,8 +33,6 @@ public class MainClassCellphoneAndPlan {
 
 		String monthlyPlan = cp.selectPlan(Carrier); //invoke a method
 		PriceOfPlans pop = new PriceOfPlans();
-		int total = pop.total(0, 0);
-		{System.out.println("model+carrier");
+		
 	}
-}
 }
