@@ -7,11 +7,7 @@ public class CellphoneAndPlan {
 //	String osSelection( ) {
 
 	String brands(String brandName) {
-		Scanner sc = new Scanner(System.in);
-		while(!(brandName.equals("apple")||brandName.equals("samsung"))) {
-			System.out.println("invalid input:choose from the availabe brands only");
-			String brand = sc.next();
-		}
+	
 		if (brandName.equals("apple")) {
 			System.out.println(
 					"Please enter the model that you want to buy from below: iphone14/ iphone14Pro/ iphone14Promax/ iphone14Mini");
