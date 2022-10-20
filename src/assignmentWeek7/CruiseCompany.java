@@ -4,18 +4,26 @@ import java.util.Scanner;
 
 public class CruiseCompany {
 
-	String cruiseName;
+	String packageChosen;
 	double adultsTicketPrice;
 	double childrenTicketPrice;
 	int daysCount;
+	int noOfAdults;
 
 	public CruiseCompany(String nameOfCruise, double adultsTicketOver12, double childrenTicketOver5, int noOfDays) {
 
-		cruiseName = nameOfCruise;
+		packageChosen = nameOfCruise;
 		adultsTicketPrice = adultsTicketOver12;
 		childrenTicketPrice = childrenTicketOver5;
 		daysCount = noOfDays;
-
+		}
+		
+		int total1 (int adultsTicketPrice){
+				{System.out.println("Your Package includes:");
+				double total1= noOfAdults*adultsTicketPrice*daysCount;
+				System.out.println(packageChosen + " adults @ " +noOfAdults +":"+ total1);}
+				
+				return adultsTicketPrice;
 	}
 
 	public CruiseCompany() {
@@ -23,41 +31,33 @@ public class CruiseCompany {
 	}
 
 	/// method 1 for cruise packages
-	String cruisePackage(String cruises) {
+	String cruisePackage(String packageChosen) {
 		double priceForAdults;
 		double priceForChildren;
 		int noOfDays;
-		switch (cruises) {
+		switch (packageChosen) {
 		case ("Scenic Cruise"): {
 			System.out.println("The cruise that you have selected is Scenic Cruise which is a 3 day cruise\r\n"
 					+ "Price for Adults	(greater than 12)	: 43.99 per day\r\n"
 					+ "Price for kids above 5			: 12.99 per day\r\n" + "");
-			priceForAdults = 43.99;
-			priceForChildren = 12.99;
 			break;
 		}
 		case ("Sunset Cruise"): {
 			System.out.println("The cruise that you have selected is Sunset Cruise which is a 1 day cruise\r\n"
 					+ "Price for Adults	(greater than 12)	: 52.99 per day\r\n"
 					+ "Price for kids above 5			: 15.99 per day\r\n" + "");
-			priceForAdults = 52.99;
-			priceForChildren = 15.99;
 			break;
 		}
 		case ("Discovery Cruise"): {
 			System.out.println("The cruise that you have selected is Discovery Cruise which is a 4 day cruise\r\n"
 					+ "Price for Adults	(greater than 12)	: 39.99 per day\r\n"
 					+ "Price for kids above 5			: 9.99 per day\r\n" + "");
-			priceForAdults = 39.99;
-			priceForChildren = 9.99;
 			break;
 		}
 		case ("Mystery Cruise"): {
 			System.out.println("The cruise that you have selected is Mystery Cruise which is a 2 day cruise\r\n"
 					+ "Price for Adults	(greater than 12)	: 45.99 per day\r\n"
 					+ "Price for kids above 5			: 12.99 per day\r\n" + "");
-			priceForAdults = 45.99;
-			priceForChildren = 12.99;
 			break;
 		}
 		default: {
@@ -67,7 +67,7 @@ public class CruiseCompany {
 		}
 		}
 
-		return cruises;
+		return packageChosen;
 	}
 
 	// no of adult and child
@@ -102,13 +102,16 @@ public class CruiseCompany {
 			buffetmealForAdults = 20.99;
 			buffetmealForKids = 4.99;
 		} else {
+			buffetPrice = 0;
 			buffetmealForAdults = 0;
 			buffetmealForKids = 0;
 		}
 		return buffetOption;
 
-		//// Scenic Cruise Adults
+		
 
 	}
 
+	
+	
 }
