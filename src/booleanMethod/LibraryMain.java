@@ -23,7 +23,9 @@ public class LibraryMain {
 				macbeth, harrypotter1, malgudyDays, alchemist };
 		Scanner sc = new Scanner(System.in);
 		int bookCount = 0;
-		String bookIssued = null;
+		String book1 = null;
+		String book2 = null;
+		String book3;
 		do {
 			System.out.println("Which book you want to be issued");
 			String requiredBookName = sc.nextLine();
@@ -32,32 +34,30 @@ public class LibraryMain {
 
 			// iterating over the array
 
-			for (int i = 0; i < bookDetails.length; i++ ){
-			
+			for (int i = 0; i < bookDetails.length; i++) {
+
 				if (requiredBookName.equals(bookDetails[i].bookName) && bookAuthor.equals(bookDetails[i].authorName)
-						&& !bookDetails[i].isBookIssued ) {
+						&& !bookDetails[i].isBookIssued) {
 					bookDetails[i].isBookIssued = false;
-					
-					System.out.println(bookDetails[i].bookName+ " is issued");
-					bookIssued = bookDetails[i].bookName;
+
+					System.out.println(bookDetails[i].bookName + " is issued");
+					//book1 = bookDetails[i].bookName;
 					bookCount++;
 					break;
-					}
-				
-				else if
-					(requiredBookName.equals(bookIssued)) 
-				 {
-					System.out.println("This book is already issued");
-					break;
 				}
-				else			
-			{System.out.println("book is not available");}
-				break;
+
+				else if (requiredBookName.equals(bookDetails[i].bookName)
+						&& bookAuthor.equals(bookDetails[i].authorName) && bookDetails[i].isBookIssued) {
+					System.out.println(bookDetails[i].bookName + " is already issued");
+					break;
+				} else if (!(requiredBookName.equals(bookDetails[i].bookName)
+						&& bookAuthor.equals(bookDetails[i].authorName) && !bookDetails[i].isBookIssued)) {
+					System.out.println("This book is not available in library");
+					break;
+				} 
 			}
-			
-			
 
 		} while (bookCount < 3);
+
 	}
-	
 }
