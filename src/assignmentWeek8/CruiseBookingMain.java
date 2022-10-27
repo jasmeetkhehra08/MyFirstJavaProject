@@ -1,13 +1,29 @@
-package assignmentWeek7;
+package assignmentWeek8;
 
 import java.util.Scanner;
 
-public class CruiseCompanyMain {
+import assignmentWeek7.CruiseDetails;
+
+public class CruiseBookingMain {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
 		Scanner sc = new Scanner(System.in);
+		CruiseDetailsAndRegistration signUp = new CruiseDetailsAndRegistration("username", "password", "fullname",
+				"phoneNumber");
+		String enteredUsername=null;
+		String enteredPassword=null;
+		String enteredPhoneNumber=null;
+		System.out.println("Welcome to Cruise Booking \nPlease sign up to book a cruise.\ndo you want to signup?");
+		String userResponse = sc.next();
+		signUp.signUp(userResponse);
+
+
+			signUp.setUsername(enteredUsername); // setting username
+			signUp.setPassword(enteredPassword); //setting password
+		System.out.println("Enter your Full Name");
+		String fullName = sc.next();
+			signUp.setPhoneNumber(enteredPhoneNumber);
+		System.out.println("Thank you for registering!");
 
 		String again;
 		String cruiseSelec;
@@ -19,10 +35,12 @@ public class CruiseCompanyMain {
 		CruiseDetails[] cruiseDetails = { scenicCruise, sunsetCruise, discoveryCruise, mysteryCruise };
 
 		do {
-			System.out.println(
+			{System.out.println(
 					"We offer 4 different packages as displayed below. Please enter the cruise that you want to select.\n"
 							+ "Scenic Cruise\nSunset Cruise\nDiscovery Cruise\nMystery Cruise\n");
+		
 			cruiseSelec = sc.nextLine();
+		}
 			int counTry = 1;
 			while (!cruiseSelec.equalsIgnoreCase("Scenic Cruise") && !cruiseSelec.equalsIgnoreCase("Sunset Cruise")
 					&& !cruiseSelec.equalsIgnoreCase("Discovery Cruise")
@@ -31,8 +49,9 @@ public class CruiseCompanyMain {
 				if (counTry > 3) {
 					System.out.println("Please Start over,you have reached the input limit");
 					System.exit(0);
+					break;
 				}
-				System.out.println("Invalid Selection try again below");
+				System.out.println("Select below");
 				cruiseSelec = sc.nextLine();
 
 			}
@@ -52,7 +71,7 @@ public class CruiseCompanyMain {
 			System.out.println("Please press Y if you want to continue with the selection or\n"
 					+ "press any other alphabet to select another");
 			again = sc.nextLine();
-		} while (!again.equalsIgnoreCase("Y"));
+		} while (!(again.equalsIgnoreCase("Y")));
 
 		System.out.println("Enter the number of adults");
 		int numAdults = sc.nextInt();
@@ -64,23 +83,43 @@ public class CruiseCompanyMain {
 			for (int i = 0; i < numChildren; i++) {
 				System.out.println("Enter the age of child " + (i + 1));
 				age = sc.nextInt();
-				while (age >= 13 || age <= 0) {
+				while (age > 13 || age < 0) {
 					System.out.println("Please enter a valid age of child " + (i + 1) + " from (1-12)");
 					age = sc.nextInt();
 				}
-
-				if (age >= 5) {
+				if (age > 5) {
 					ageAboveFive++;
 				}
 			}
+
 		}
-
+		{
+			System.out.println(
+					"All our cruises have food service on board. Do you want to pre-book for dinner buffet meals at \n20.99 per day for adults and 4.99 per day for kids?"
+							+ "\nPlease press Y if you want to Prebook otherwise press any other alphabet");
+			String buffetMeal = sc.next();
+			cruiseDetails[index].setbuffetPrice(buffetMeal);
+			cruiseDetails[index].output(numAdults, ageAboveFive);
+		}
 		System.out.println(
-				"All our cruises have food service on board. Do you want to pre-book for dinner buffet meals at \n20.99 per day for adults and 4.99 per day for kids?"
-						+ "\nPlease press Y if you want to Prebook otherwise press any other alphabet");
-		String buffetMeal = sc.next();
-		cruiseDetails[index].setbuffetPrice(buffetMeal);
-		cruiseDetails[index].output(numAdults, ageAboveFive);
-
-	}
+				"Do you want to change your personal information. Press Y to change. Press any other alphabet to exit.");
+		String infoChange = sc.next();
+		signUp.userResponse(infoChange);
+		String userResp= sc.next();
+		//signUp.infoChange(userResp);
+		String newPassword="";
+		String newUsername="";
+		String newPhoneNumber="";
+switch(userResp) {
+case "1":
+	signUp.updatePassword( enteredPassword, newPassword);
+	break;
+case "2":
+	signUp.updatePhoneNumber(enteredPhoneNumber, newPhoneNumber);
+	break;
+case "3":
+	signUp.updateUsername(enteredUsername, newUsername);
+break;}
+System.out.println("Thank you for using the service!");
+}
 }
