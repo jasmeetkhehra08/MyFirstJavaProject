@@ -8,21 +8,17 @@ public class CruiseBookingMain {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		CruiseDetailsAndRegistration signUp = new CruiseDetailsAndRegistration("username", "password", "fullname",
-				"phoneNumber");
-		String enteredUsername=null;
-		String enteredPassword=null;
-		String enteredPhoneNumber=null;
+		CruiseDetailsAndRegistration signUp = new CruiseDetailsAndRegistration("username", "password","phoneNumber");
+		String enteredUsername = null;
+		String enteredPassword = null;
+		String enteredPhoneNumber = null;
 		System.out.println("Welcome to Cruise Booking \nPlease sign up to book a cruise.\ndo you want to signup?");
 		String userResponse = sc.next();
 		signUp.signUp(userResponse);
 
-
-			signUp.setUsername(enteredUsername); // setting username
-			signUp.setPassword(enteredPassword); //setting password
-		System.out.println("Enter your Full Name");
-		String fullName = sc.next();
-			signUp.setPhoneNumber(enteredPhoneNumber);
+		signUp.setUsername(enteredUsername); // setting username
+		signUp.setPassword(enteredPassword); // setting password
+		signUp.setPhoneNumber(enteredPhoneNumber);
 		System.out.println("Thank you for registering!");
 
 		String again;
@@ -35,12 +31,13 @@ public class CruiseBookingMain {
 		CruiseDetails[] cruiseDetails = { scenicCruise, sunsetCruise, discoveryCruise, mysteryCruise };
 
 		do {
-			{System.out.println(
-					"We offer 4 different packages as displayed below. Please enter the cruise that you want to select.\n"
-							+ "Scenic Cruise\nSunset Cruise\nDiscovery Cruise\nMystery Cruise\n");
-		
-			cruiseSelec = sc.nextLine();
-		}
+			{
+				System.out.println(
+						"We offer 4 different packages as displayed below. Please enter the cruise that you want to select.\n"
+								+ "Scenic Cruise\nSunset Cruise\nDiscovery Cruise\nMystery Cruise\n");
+
+				cruiseSelec = sc.nextLine();
+			}
 			int counTry = 1;
 			while (!cruiseSelec.equalsIgnoreCase("Scenic Cruise") && !cruiseSelec.equalsIgnoreCase("Sunset Cruise")
 					&& !cruiseSelec.equalsIgnoreCase("Discovery Cruise")
@@ -105,21 +102,22 @@ public class CruiseBookingMain {
 				"Do you want to change your personal information. Press Y to change. Press any other alphabet to exit.");
 		String infoChange = sc.next();
 		signUp.userResponse(infoChange);
-		String userResp= sc.next();
-		//signUp.infoChange(userResp);
-		String newPassword="";
-		String newUsername="";
-		String newPhoneNumber="";
-switch(userResp) {
-case "1":
-	signUp.updatePassword( enteredPassword, newPassword);
-	break;
-case "2":
-	signUp.updatePhoneNumber(enteredPhoneNumber, newPhoneNumber);
-	break;
-case "3":
-	signUp.updateUsername(enteredUsername, newUsername);
-break;}
-System.out.println("Thank you for using the service!");
-}
+		String userResp = sc.next();
+		// signUp.infoChange(userResp);
+		String newPassword = "";
+		String newUsername = "";
+		String newPhoneNumber = "";
+		switch (userResp) {
+		case "1":
+			signUp.updatePassword(enteredPassword, newPassword);
+			break;
+		case "2":
+			signUp.updatePhoneNumber(enteredPhoneNumber, newPhoneNumber);
+			break;
+		case "3":
+			signUp.updateUsername(enteredUsername, newUsername);
+			break;
+		}
+		System.out.println("Thank you for using the service!");
+	}
 }

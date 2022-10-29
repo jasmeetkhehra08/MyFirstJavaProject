@@ -6,14 +6,12 @@ public class CruiseDetailsAndRegistration {
 
 	private String username;
 	private String password;
-	private String fullName;
 	private String phoneNumber;
 	Scanner sc = new Scanner(System.in);
 
-	public CruiseDetailsAndRegistration(String username, String password, String fullname, String phoneNumber) {
+	public CruiseDetailsAndRegistration(String username, String password, String phoneNumber) {
 		this.username = username;
 		this.password = password;
-		this.fullName = fullName;
 		this.phoneNumber = phoneNumber;
 	}
 
@@ -32,9 +30,7 @@ do {
 	System.out.println("Enter the password that you want to use.Password length should be between 8-16 characters");
 	enteredPassword = sc.next();
 		if (enteredPassword.length() > 7 && enteredPassword.length() < 17) {
-//			if (enteredPassword.matches("@") || enteredPassword.matches("#") || enteredPassword.matches("!")
-//					|| enteredPassword.matches("$") || enteredPassword.matches("%") || enteredPassword.matches("^")
-//					|| enteredPassword.matches("&") || enteredPassword.matches("|")) {
+
 			this.password = enteredPassword;
 		} 
 		}

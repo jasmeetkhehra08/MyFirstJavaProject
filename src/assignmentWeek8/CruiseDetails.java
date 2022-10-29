@@ -1,7 +1,5 @@
 package assignmentWeek8;
 
-import java.util.Scanner;
-
 public class CruiseDetails {
 
 	public String cruiseSelection;
