@@ -19,6 +19,7 @@ public class NameGuessingGameMain {
 	int nameIndex = random.nextInt(names.length);
 	String name = names[nameIndex];
 	String nameMasked=name.replaceAll("\\w", "_");
+	name=name.replace("\r","");
 	GameRules gameRules = new GameRules();
 	gameRules.guessedLetter(name, nameMasked);
 	
