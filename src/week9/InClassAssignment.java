@@ -24,6 +24,7 @@ public class InClassAssignment {
 		// Write your first and Last name and replace Last name with *
 		name = name.replace("kaur", "****");
 		System.out.println("replacing last name :" + name);
+		
 	}
 
 }
