@@ -13,16 +13,22 @@ public class NameGuessingGameMain {
 
 	Scanner sc = new Scanner(Paths.get("C:\\Users\\JK\\OneDrive\\Desktop\\NameList.txt"), StandardCharsets.UTF_8.name());
 	String nameList = sc.useDelimiter("\\A").next();
-	
+	Scanner scanner= new Scanner(System.in);
+	 String userResponse="";
+do {	
 	String[] names = nameList.split("\n"); //splitting into an array of strings
 	Random random = new Random();
 	int nameIndex = random.nextInt(names.length);
-	String name = names[nameIndex];
+	String name = names[nameIndex].replace("\r","");
 	String nameMasked=name.replaceAll("\\w", "_");
-	name=name.replace("\r","");
 	GameRules gameRules = new GameRules();
 	gameRules.guessedLetter(name, nameMasked);
 	
-	
-}
+	System.out.println("do you want to play again:\n press y to play again or press any other key to exit");
+	userResponse= scanner.next();
+	if(!(userResponse.equals("y"))) {
+		System.exit(0);
 	}
+}while(userResponse.equals("y"));
+}
+}
