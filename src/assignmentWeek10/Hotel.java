@@ -19,11 +19,7 @@ public class Hotel extends UserSignUp {
 	Scanner sc= new Scanner(System.in);
 
 	void getRoomDetails() {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Please enter the room you want to select\r\n"
-    			+ "Delux Suite: accommodates 2 adults and 2 children at the rate of $180/ night\r\n"
-    			+ "Family Suite: accommodates 4 adults and 4 children at $230/ night.\r\n"
-    			);
+       
         roomType = sc.nextLine();
         System.out.println("Enter number of adults:");
         adults = sc.nextInt();
