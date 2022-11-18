@@ -17,19 +17,19 @@ public class Rocket implements Spaceship {
 	}
 
 	@Override
-	public boolean canCarry(Item item) { //passing class as parameter and accessing class level variables
-int totalWeight= item.weight+weight;
-if (totalWeight <= maxWeight) {
-    return true;
-} else {
-    return false;}
+	public boolean canCarry(Item item) { // passing class as parameter and accessing class level variables
+		int totalWeight = item.weight + weight;
+		if (totalWeight <= maxWeight) {
+			return true;
+		} else {
+			return false;
+		}
 	}
-	
 
 	@Override
 	public int carry(Item item) {
-		return weight = item.weight+weight;
-		
+		return weight = item.weight + weight;
+
 	}
 
 }

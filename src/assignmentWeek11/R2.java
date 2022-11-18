@@ -7,30 +7,41 @@ Chance of landing crash = 8% * (cargo carried / cargo limit)*/
 package assignmentWeek11;
 
 public class R2 extends Rocket {
+
+	int weight = 18000;
+	int maxWeight = 29000;
+	int cost = 120;
+
+	public R2() {
+		super.cost = cost;
+		super.maxWeight = maxWeight;
+		super.weight = weight;
+	}
+
 	@Override
 	public boolean launch() {
-		double chanceOfExploding=Math.random();
-		if(chanceOfExploding<=0.15) {
+		double chanceOfExploding = Math.random();
+		if (chanceOfExploding <= 0.04 * (this.weight / this.maxWeight)) {
 			System.out.println("Rocket launched successfully");
-		return true;
-	}else {
-		System.out.println("Rocket exploded");
-		
-		return false;
-		
-	}
+			return true;
+		} else {
+			System.out.println("Rocket exploded");
+
+			return false;
+
+		}
 	}
 
 	@Override
 	public boolean land() {
-		double chanceOfLanding =Math.random();
-		if(chanceOfLanding<=0.2) {
+		double chanceOfCrash = Math.random();
+		if (chanceOfCrash <= 0.08 * (this.weight / this.maxWeight)) {
 			System.out.println("Rocket landed successfully");
 			return true;
-		}else {
+		} else {
 			System.out.println("Rocket crashed");
 			return false;
-		}}
+		}
+	}
 
-	
 }
