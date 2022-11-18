@@ -14,7 +14,6 @@ public class UserSignUp {
 
 	Scanner sc = new Scanner(System.in);
 
-
 	void signUp() {
 		System.out.println("Please signup to book a service");
 		this.username(username);
@@ -47,7 +46,7 @@ public class UserSignUp {
 		} while (!(enteredPassword.length() >= 8 && enteredPassword.length() <= 16));
 	}
 
-	String name(String enteredName) {
+	public String name(String enteredName) {
 		System.out.println("Enter your full name");
 		enteredName = sc.next();
 		return this.Name = enteredName;
@@ -57,7 +56,12 @@ public class UserSignUp {
 		do {
 			System.out.println("Enter your phone number");
 			enteredPhoneNumber = sc.next();
-			if (enteredPhoneNumber.length() == 10 && enteredPhoneNumber.contains("0")|| enteredPhoneNumber.contains("1")||enteredPhoneNumber.contains("2") || enteredPhoneNumber.contains("3")|| enteredPhoneNumber.contains("4")|| enteredPhoneNumber.contains("5")|| enteredPhoneNumber.contains("6")|| enteredPhoneNumber.contains("7")|| enteredPhoneNumber.contains("8")|| enteredPhoneNumber.contains("9")) {
+			if (enteredPhoneNumber.length() == 10 && enteredPhoneNumber.contains("0")
+					|| enteredPhoneNumber.contains("1") || enteredPhoneNumber.contains("2")
+					|| enteredPhoneNumber.contains("3") || enteredPhoneNumber.contains("4")
+					|| enteredPhoneNumber.contains("5") || enteredPhoneNumber.contains("6")
+					|| enteredPhoneNumber.contains("7") || enteredPhoneNumber.contains("8")
+					|| enteredPhoneNumber.contains("9")) {
 				this.phoneNumber = enteredPhoneNumber;
 			} else {
 				System.out.println("Please enter a valid phone number");

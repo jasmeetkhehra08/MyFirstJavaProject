@@ -3,10 +3,8 @@ package assignmentWeek10;
 public class DeluxeSuite extends Hotel {
 
 	void deluxRoom() {
-
-		int roomPrice = 180;
+	int roomPrice = 180;
 		String roomType = "delux Suite";
-
 		do {
 			if (!(super.adults <= 2 && super.children <= 2)) {
 				System.out.println(

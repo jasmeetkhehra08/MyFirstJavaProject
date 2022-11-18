@@ -17,6 +17,7 @@ public class MysteryCruise extends Cruise {
 	super.numDay=noOfDays;
 	super.cruiseSelection=cruiseSelected;
 	super.cruiseSelected();
+	
 	}
 	
 	void addOn() {

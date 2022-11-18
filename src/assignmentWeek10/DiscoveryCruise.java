@@ -14,8 +14,7 @@ public class DiscoveryCruise extends Cruise  {
 		super.numDay=noOfDays;
 		super.cruiseSelection=cruiseSelected;
 		super.cruiseSelected();
-		}
-		
+		}	
 	void addOn() {
 		String addOns= "Adventure Games ";
 		System.out.println("Press Y if want to get Adventure Games for additional $50.");
