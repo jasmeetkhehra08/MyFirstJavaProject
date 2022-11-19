@@ -25,7 +25,7 @@ public class R1 extends Rocket {
 			System.out.println("Rocket launched successfully");
 			return true;
 		} else {
-			System.out.println("Rocket exploded");
+			System.out.println("R1 Rocket exploded");
 			return false;
 		}
 	}
@@ -37,7 +37,7 @@ public class R1 extends Rocket {
 			System.out.println("Rocket landed successfully");
 			return true;
 		} else {
-			System.out.println("Rocket crashed");
+			System.out.println("R1 Rocket crashed");
 			return false;
 		}
 	}
