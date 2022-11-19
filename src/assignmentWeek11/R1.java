@@ -11,7 +11,7 @@ public class R1 extends Rocket {
 	int weight = 10000;
 	int maxWeight = 18000;
 	int cost = 100;
-
+	
 	public R1() {
 		super.cost = cost;
 		super.maxWeight = maxWeight;

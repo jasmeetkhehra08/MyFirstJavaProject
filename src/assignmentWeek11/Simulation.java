@@ -58,7 +58,10 @@ public class Simulation {
 		public int runSimulation(ArrayList<Rocket> rockets) {
 			int totalCost = 0;
 			for (int i = 0; i < rockets.size(); i++) {
-				if(rockets.get(i).launch())
+				if(rockets.get(i).launch()) {
+				}
+				else if(rockets.get(i).land()) {
+				}
 				while (!rockets.get(i).launch() || !rockets.get(i).land()) {
 					totalCost += rockets.get(i).cost;
 					break;
