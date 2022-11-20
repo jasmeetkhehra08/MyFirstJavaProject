@@ -2,7 +2,8 @@ package assignmentWeek11;
 
 public class Item {
 
-	String name="";
-	int weight=0;
-
+	String name;
+	int weight;
+	 
+ 
 }

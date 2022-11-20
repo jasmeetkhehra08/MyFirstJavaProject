@@ -5,6 +5,15 @@ public class Rocket implements Spaceship {
 	int weight;
 	int maxWeight;
 	int cost;
+	int cargoCarried;
+
+	public Rocket(int cost,int weight, int maxWeight) {
+		this.cost = cost;
+		this.maxWeight = maxWeight;
+		  this.weight = weight;
+		this.cargoCarried = 0;
+
+	}
 
 	@Override
 	public boolean launch() {
@@ -18,7 +27,7 @@ public class Rocket implements Spaceship {
 
 	@Override
 	public boolean canCarry(Item item) { // passing class as parameter and accessing class level variables
-		int totalWeight = item.weight + weight;
+		int totalWeight = item.weight + cargoCarried;
 		if (totalWeight <= maxWeight) {
 			return true;
 		} else {
@@ -28,7 +37,7 @@ public class Rocket implements Spaceship {
 
 	@Override
 	public int carry(Item item) {
-		return weight = item.weight + weight;
+		return cargoCarried = item.weight + cargoCarried;
 
 	}
 

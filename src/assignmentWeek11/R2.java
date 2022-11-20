@@ -8,20 +8,14 @@ package assignmentWeek11;
 
 public class R2 extends Rocket {
 
-	int weight = 18000;
-	int maxWeight = 29000;
-	int cost = 120;
-
 	public R2() {
-		super.cost = cost;
-		super.maxWeight = maxWeight;
-		super.weight = weight;
+		super(120,18000,29000);
 	}
 
 	@Override
 	public boolean launch() {
 		double chanceOfExploding = Math.random();
-		if (chanceOfExploding <= 0.04 * (this.weight / this.maxWeight)) {
+		if (chanceOfExploding >= 0.04 * (this.weight / this.maxWeight)) {
 			System.out.println("Rocket launched successfully");
 			return true;
 		} else {
@@ -35,7 +29,7 @@ public class R2 extends Rocket {
 	@Override
 	public boolean land() {
 		double chanceOfCrash = Math.random();
-		if (chanceOfCrash <= 0.08 * (this.weight / this.maxWeight)) {
+		if (chanceOfCrash >= 0.08 * (this.weight / this.maxWeight)) {
 			System.out.println("Rocket landed successfully");
 			return true;
 		} else {
