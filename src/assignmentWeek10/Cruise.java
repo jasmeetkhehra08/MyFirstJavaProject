@@ -1,28 +1,39 @@
-/* you will be handling the price calculation, buffet details, tax calculation etc.*/
 package assignmentWeek10;
+
 public class Cruise extends UserSignUp {
 
 	String cruiseSelection = "";
 	double priceForAdult = 0;
 	double priceForchildren = 0;
 	int numDay = 0;
-	double buffetForAdults;
-	double buffetForChildren;
+	double buffetForAdults = 20.99;
+	double buffetForChildren = 4.99;
 	int numAdults;
 	int numChildren;
 	int ageAboveFive;
 	int additionalServicesPrice;
 	String additionalService = "";
+	String additionalActivity = "";
 
-	void cruiseSelected() {
+	public Cruise(String cruiseSelection, double priceForAdult, double priceForchildren, int numDay) {
+		super();
+		this.cruiseSelection = cruiseSelection;
+		this.priceForAdult = priceForAdult;
+		this.priceForchildren = priceForchildren;
+		this.numDay = numDay;
+	}
+
+	public void calculations() {
+		this.details();
+		this.output();
+	}
+
+	private void details() {
 		{
 			System.out.println("The cruise that you have selected is " + cruiseSelection + " which is a " + numDay
 					+ " day cruise\r\n" + "Price for Adults	(greater than 12)	: " + priceForAdult + " per day\r\n"
 					+ "Price for kids above 5			: " + priceForchildren + " per day\r\n" + "");
 		}
-	}
-
-	void additionalDetails() {
 		System.out.println("Enter the number of adults");
 		numAdults = sc.nextInt();
 		System.out.println("Enter the number of children");
@@ -37,7 +48,6 @@ public class Cruise extends UserSignUp {
 					System.out.println("Please enter a valid age of child " + (i + 1) + " from (1-12)");
 					age = sc.nextInt();
 				}
-
 				if (age >= 5) {
 					ageAboveFive++;
 				}
@@ -47,15 +57,18 @@ public class Cruise extends UserSignUp {
 				"All our cruises have food service on board. Do you want to pre-book for dinner buffet meals at \n20.99 per day for adults and 4.99 per day for kids?"
 						+ "\nPlease press Y if you want to Prebook otherwise press any other alphabet");
 		String buffetMeal = sc.next();
-		if (buffetMeal.equalsIgnoreCase("Y")) {
-			buffetForAdults = 20.99;
-			buffetForChildren = 4.99;
-		} else {
+		if (!buffetMeal.equalsIgnoreCase("Y")) {
 			buffetForAdults = 0.0;
 			buffetForChildren = 0.0;
 		}
+		System.out.println(additionalActivity);
+		String userResponse = sc.next();
+		if (!(userResponse.equalsIgnoreCase("Y"))) {
+			additionalServicesPrice = 0;
+		}
 	}
-	void output() {
+
+	private void output() {
 		double priceForAdults = numAdults * priceForAdult * numDay;
 		double priceforChildren = ageAboveFive * priceForchildren * numDay;
 		double buffetTotalPriceAdult = numAdults * buffetForAdults;

@@ -1,5 +1,3 @@
-/*•	Create a separate class for user with the separate variables and methods for user credentials like username, password, name, phone number, email address and a methods for the registration of the user and validation. The user class can be the parent of cruise and hotel class. Keep the methods that should not be accessed by its child as private.*/
-
 package assignmentWeek10;
 
 import java.util.Scanner;
@@ -8,13 +6,12 @@ public class UserSignUp {
 
 	private String username = "";
 	private String password = "";
-	String Name = "";
-	String phoneNumber = "";
-	String email = "";
-
+	private String Name = "";
+	private String phoneNumber = "";
+	private String email = "";
 	Scanner sc = new Scanner(System.in);
 
-	void signUp() {
+	public void signUp() {
 		System.out.println("Please signup to book a service");
 		this.username(username);
 		this.setPassword(password);
@@ -46,13 +43,13 @@ public class UserSignUp {
 		} while (!(enteredPassword.length() >= 8 && enteredPassword.length() <= 16));
 	}
 
-	public String name(String enteredName) {
+	private String name(String enteredName) {
 		System.out.println("Enter your full name");
 		enteredName = sc.next();
 		return this.Name = enteredName;
 	}
 
-	void setPhoneNumber(String enteredPhoneNumber) {
+	private void setPhoneNumber(String enteredPhoneNumber) {
 		do {
 			System.out.println("Enter your phone number");
 			enteredPhoneNumber = sc.next();

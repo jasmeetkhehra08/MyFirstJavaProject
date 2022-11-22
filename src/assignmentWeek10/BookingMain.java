@@ -5,19 +5,14 @@ import java.util.Scanner;
 public class BookingMain {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		String roomType = "";
 		String cruiseSelec = "";
 		String again = "";
 		String userInput;
 		Scanner sc = new Scanner(System.in);
-		DeluxeSuite deluxSuite = new DeluxeSuite();
-		FamilySuite familySuite = new FamilySuite();
-		SunsetCruise sunsetCruise = new SunsetCruise();
-		ScenicCruise scenicCruise = new ScenicCruise();
-		DiscoveryCruise discoveryCruise = new DiscoveryCruise();
-		MysteryCruise mysteryCruise = new MysteryCruise();
-		deluxSuite.signUp(); // for signup
+		Cruise cruise = new Cruise(cruiseSelec, 0, 0, 0);
+		Hotel hotel = new Hotel(0, roomType);
+		cruise.signUp(); // for signup
 		do {
 			System.out.println("Please enter the service you want to book Hotel Stay/ Cruise");
 			String UserSelected = sc.nextLine().toLowerCase();
@@ -28,13 +23,16 @@ public class BookingMain {
 							+ "Delux Suite: accommodates 2 adults and 2 children at the rate of $180/ night\r\n"
 							+ "Family Suite: accommodates 4 adults and 4 children at $230/ night.\r\n");
 					roomType = sc.nextLine().toLowerCase();
-				} while (!((roomType.equals("family suite")) || roomType.equals("delux suite")));
+				} while (!((roomType.equals("delux suite")) || roomType.equals("family suite")));
 				if (roomType.equals("delux suite")) {
-					deluxSuite.getRoomDetails();
-					deluxSuite.deluxRoom();
+					hotel = new DeluxeSuite();
+					hotel.getRoomDetails();
+					hotel.calculateTax();
+					break;
 				} else if (roomType.equals("family suite")) {
-					familySuite.getRoomDetails();
-					familySuite.familyRoom();
+					hotel = new FamilySuite();
+					hotel.getRoomDetails();
+					hotel.calculateTax();
 					break;
 				}
 			case "cruise":
@@ -48,38 +46,33 @@ public class BookingMain {
 				System.out.println("Please press Y if you want to continue with the selection or\n"
 						+ "press any other alphabet to select another");
 				again = sc.nextLine();
-				while (!again.equalsIgnoreCase("Y"))
-					;
+				while (!again.equalsIgnoreCase("Y"));
+					
 				switch (cruiseSelec) {
 				case "sunset cruise":
-					sunsetCruise.sunset();
-					sunsetCruise.additionalDetails();
-					sunsetCruise.addOn();
-					sunsetCruise.output();
+					cruise = new SunsetCruise();
+					cruise.calculations();
+					break;
 				case "scenic cruise":
-					scenicCruise.scenic();
-					scenicCruise.additionalDetails();
-					scenicCruise.addOn();
-					scenicCruise.output();
+					cruise = new ScenicCruise();
+					cruise.calculations();
+					break;
 				case "discovery cruise":
-					discoveryCruise.discovery();
-					discoveryCruise.additionalDetails();
-					discoveryCruise.addOn();
-					discoveryCruise.output();
+					cruise = new DiscoveryCruise();
+					cruise.calculations();
+					break;
 				case "mystery cruise":
-					mysteryCruise.mystery();
-					mysteryCruise.additionalDetails();
-					mysteryCruise.addOn();
-					mysteryCruise.output();
+					cruise = new MysteryCruise();
+					cruise.calculations();
+					break;
 				}
 			}
 			System.out.println("Press Y if you want to book another Hotel Room or Cruise");
 			userInput = sc.nextLine();
 			if (!(userInput.equalsIgnoreCase("Y"))) {
-				System.out.println("Thankyou for choosing our services");
+				System.out.println("----Thankyou for choosing our services----");
 				System.exit(0);
 			}
-
 		} while ((userInput.equalsIgnoreCase("Y")));
 	}
 }
