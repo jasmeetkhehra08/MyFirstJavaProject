@@ -15,7 +15,7 @@ public class R1 extends Rocket {
 	@Override
 	public boolean launch() {
 		double chanceOfExploding =( Math.random());
-		if (chanceOfExploding >= 0.05 * (this.cargoCarried / maxWeight)) {
+		if (chanceOfExploding <= 0.50 * (this.getCargoCarried() / this.getCargoLimit())) {
 			System.out.println("Rocket launched successfully");
 			return true;
 		} else {
@@ -27,7 +27,7 @@ public class R1 extends Rocket {
 	@Override
 	public boolean land() {
 		double chanceOfCrash = (Math.random())/100;
-		if (chanceOfCrash >= 0.1 * (cargoCarried / maxWeight)) {
+		if (chanceOfCrash <= 0.50 * (this.getCargoCarried() / this.getCargoLimit())) {
 			System.out.println("Rocket landed successfully");
 			return true;
 		} else {

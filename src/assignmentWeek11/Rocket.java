@@ -25,6 +25,7 @@ public class Rocket implements Spaceship {
 		return true;
 	}
 
+	
 	@Override
 	public boolean canCarry(Item item) { // passing class as parameter and accessing class level variables
 		int totalWeight = item.weight + cargoCarried;
@@ -40,5 +41,11 @@ public class Rocket implements Spaceship {
 		return cargoCarried = item.weight + cargoCarried;
 
 	}
-
+	
+	protected double getCargoLimit() {
+		return maxWeight-weight;
+	}
+	protected double getCargoCarried() {
+		return cargoCarried-weight;
+	}
 }

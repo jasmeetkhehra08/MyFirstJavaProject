@@ -5,7 +5,7 @@ public class ProgramToCheckPrimeNumbers {
 		// TODO Auto-generated method stub
 //check if number is prime or not
 
-		int primeNumber = 15;
+		int primeNumber = 85;
 		while (primeNumber >= 2)
 
 			if (primeNumber % 2 == 0 || primeNumber % 3 == 0) {
