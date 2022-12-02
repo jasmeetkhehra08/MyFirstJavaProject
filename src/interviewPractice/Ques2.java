@@ -3,7 +3,7 @@ package interviewPractice;
 
 import java.util.Scanner;
 
-public class PrimeNumber {
+public class Ques2 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -17,12 +17,12 @@ public class PrimeNumber {
 			isPrime=false;
 			System.out.println("Number is not prime");
 			break;
-		}}
+			}}
 		if(isPrime==true) {
 			System.out.println("Number is prime");
 		}}
 		else {
-			System.out.println("Number is not prime");
+			System.out.println("number is not prime");
 		}
 
 }
