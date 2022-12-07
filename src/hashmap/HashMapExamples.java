@@ -59,14 +59,14 @@ public class HashMapExamples {
 //				}
 				
 				//iterate over hashMap
-				ListIterator<Employee> iterator= mechanical.entrySet().iterator();
-				       
-				for (String i : mechanical.keySet()) {
-					  System.out.println(i);
-					}
-				        for (String i : mechanical.keySet()) {
-				        	  System.out.println("key: " + i + " value: " + mechanical.get(i));
-				        	}
+//				ListIterator<Employee> iterator= mechanical.entrySet().iterator();
+//				       
+//				for (String i : mechanical.keySet()) {
+//					  System.out.println(i);
+//					}
+//				        for (String i : mechanical.keySet()) {
+//				        	  System.out.println("key: " + i + " value: " + mechanical.get(i));
+//				        	}
 				    }
 			}
 

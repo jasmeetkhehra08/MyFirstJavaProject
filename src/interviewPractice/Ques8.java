@@ -16,7 +16,6 @@ public class Ques8 {
 			else if (numbers[i] < smallest)
 				smallest = numbers[i];
 		}
- 
 		System.out.println("Largest Number is : " + largest);
 		System.out.println("Smallest Number is : " + smallest);
 	}
